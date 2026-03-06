@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:
+  embodiedmind:
+    build: .
+    ports:
+      - "7860:7860"
+    volumes:
+      - ./data:/app/data
+      - ./.env:/app/.env
+    environment:
+      - CHROMA_PERSIST_DIR=/app/data/chroma_db
+    restart: unless-stopped
+
+  # Optional: run ingestion as a separate one-shot service
+  ingest:
+    build: .
+    command: python scripts/ingest_all.py
+    volumes:
+      - ./data:/app/data
+      - ./.env:/app/.env
+    environment:
+      - CHROMA_PERSIST_DIR=/app/data/chroma_db
+    profiles:
+      - ingest
