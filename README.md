@@ -199,24 +199,18 @@ git clone <your-repo-url> embodiedmind
 cd embodiedmind
 ```
 
-如果你是直接拿到的项目文件夹，直接进入目录即可：
-
-```bash
-cd "c:/Users/Bill Zhang/Desktop/Embodied-AI learning tool/embodiedmind"
-```
-
----
-
 ### 2. 安装 Poetry
 
 Poetry 是本项目的包管理工具。如果你还没有安装：
 
 **macOS / Linux：**
+
 ```bash
 curl -sSL https://install.python-poetry.org | python3 -
 ```
 
 **Windows（PowerShell）：**
+
 ```powershell
 (Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | python -
 ```
@@ -229,6 +223,7 @@ poetry --version
 ```
 
 > 如果不想使用 Poetry，也可以用 pip + venv：
+>
 > ```bash
 > python -m venv .venv
 > source .venv/bin/activate   # Windows: .venv\Scripts\activate
@@ -263,6 +258,7 @@ poetry run playwright install chromium
 ```
 
 > 如果在国内网络环境下载缓慢，可以设置代理：
+>
 > ```bash
 > HTTPS_PROXY=http://your-proxy:port poetry run playwright install chromium
 > ```
@@ -389,7 +385,7 @@ poetry run python scripts/ingest_github.py
 poetry run python -m embodiedmind.ui.gradio_app
 ```
 
-浏览器访问：**http://localhost:7860**
+浏览器访问：**<http://localhost:7860>**
 
 ---
 
@@ -486,6 +482,7 @@ poetry run uvicorn embodiedmind.api.router:router --host 0.0.0.0 --port 8000 --a
 **接口列表：**
 
 #### `GET /api/v1/health`
+
 健康检查。
 
 ```bash
@@ -494,6 +491,7 @@ curl http://localhost:8000/api/v1/health
 ```
 
 #### `POST /api/v1/query`
+
 提问接口。
 
 ```bash
@@ -521,6 +519,7 @@ curl -X POST http://localhost:8000/api/v1/query \
 ```
 
 #### `GET /api/v1/stats`
+
 知识库统计信息。
 
 ```bash
@@ -704,10 +703,13 @@ A: robots.txt 可能限制了爬取路径，这是系统的合规行为。可以
 
 **Q: ChromaDB 启动时报 `sqlite3` 版本错误**
 A: ChromaDB 需要 SQLite ≥ 3.35。在部分旧版 Linux 上可以通过 `pysqlite3-binary` 解决：
+
 ```bash
 poetry add pysqlite3-binary
 ```
+
 并在 `chroma_store.py` 开头添加：
+
 ```python
 import pysqlite3
 import sys
@@ -733,26 +735,26 @@ A: 可以，修改 `src/embodiedmind/chains/retrieval_qa.py` 中的 `ChatOpenAI`
 
 | 库 | 版本 | 许可证 | 项目地址 |
 |----|------|--------|---------|
-| **LangChain** | ≥ 0.3.0 | MIT | https://github.com/langchain-ai/langchain |
-| **LangChain OpenAI** | ≥ 0.2.0 | MIT | https://github.com/langchain-ai/langchain |
-| **LangChain Community** | ≥ 0.3.0 | MIT | https://github.com/langchain-ai/langchain |
-| **LangChain Chroma** | ≥ 0.1.0 | MIT | https://github.com/langchain-ai/langchain |
-| **ChromaDB** | ≥ 0.5.0 | Apache-2.0 | https://github.com/chroma-core/chroma |
-| **OpenAI Python SDK** | ≥ 1.0.0 | MIT | https://github.com/openai/openai-python |
-| **Gradio** | ≥ 4.0.0 | Apache-2.0 | https://github.com/gradio-app/gradio |
-| **FastAPI** | ≥ 0.110.0 | MIT | https://github.com/tiangolo/fastapi |
-| **Pydantic / pydantic-settings** | ≥ 2.0.0 | MIT | https://github.com/pydantic/pydantic |
-| **Playwright** | ≥ 1.44.0 | Apache-2.0 | https://github.com/microsoft/playwright-python |
-| **BeautifulSoup4** | ≥ 4.12.0 | MIT | https://www.crummy.com/software/BeautifulSoup/ |
-| **APScheduler** | ≥ 3.10.0 | MIT | https://github.com/agronholm/apscheduler |
-| **PyGithub** | ≥ 2.3.0 | LGPL-3.0 | https://github.com/PyGithub/PyGithub |
-| **GitPython** | ≥ 3.1.0 | BSD-3-Clause | https://github.com/gitpython-developers/GitPython |
-| **httpx** | ≥ 0.27.0 | BSD-3-Clause | https://github.com/encode/httpx |
-| **tenacity** | ≥ 8.3.0 | Apache-2.0 | https://github.com/jd/tenacity |
-| **Rich** | ≥ 13.0.0 | MIT | https://github.com/Textualize/rich |
-| **arxiv.py** | ≥ 2.1.0 | MIT | https://github.com/lukasschwab/arxiv.py |
-| **pypdf** | ≥ 4.0.0 | BSD-3-Clause | https://github.com/py-pdf/pypdf |
-| **Tavily Python** | ≥ 0.3.0 | MIT | https://github.com/tavily-ai/tavily-python |
+| **LangChain** | ≥ 0.3.0 | MIT | <https://github.com/langchain-ai/langchain> |
+| **LangChain OpenAI** | ≥ 0.2.0 | MIT | <https://github.com/langchain-ai/langchain> |
+| **LangChain Community** | ≥ 0.3.0 | MIT | <https://github.com/langchain-ai/langchain> |
+| **LangChain Chroma** | ≥ 0.1.0 | MIT | <https://github.com/langchain-ai/langchain> |
+| **ChromaDB** | ≥ 0.5.0 | Apache-2.0 | <https://github.com/chroma-core/chroma> |
+| **OpenAI Python SDK** | ≥ 1.0.0 | MIT | <https://github.com/openai/openai-python> |
+| **Gradio** | ≥ 4.0.0 | Apache-2.0 | <https://github.com/gradio-app/gradio> |
+| **FastAPI** | ≥ 0.110.0 | MIT | <https://github.com/tiangolo/fastapi> |
+| **Pydantic / pydantic-settings** | ≥ 2.0.0 | MIT | <https://github.com/pydantic/pydantic> |
+| **Playwright** | ≥ 1.44.0 | Apache-2.0 | <https://github.com/microsoft/playwright-python> |
+| **BeautifulSoup4** | ≥ 4.12.0 | MIT | <https://www.crummy.com/software/BeautifulSoup/> |
+| **APScheduler** | ≥ 3.10.0 | MIT | <https://github.com/agronholm/apscheduler> |
+| **PyGithub** | ≥ 2.3.0 | LGPL-3.0 | <https://github.com/PyGithub/PyGithub> |
+| **GitPython** | ≥ 3.1.0 | BSD-3-Clause | <https://github.com/gitpython-developers/GitPython> |
+| **httpx** | ≥ 0.27.0 | BSD-3-Clause | <https://github.com/encode/httpx> |
+| **tenacity** | ≥ 8.3.0 | Apache-2.0 | <https://github.com/jd/tenacity> |
+| **Rich** | ≥ 13.0.0 | MIT | <https://github.com/Textualize/rich> |
+| **arxiv.py** | ≥ 2.1.0 | MIT | <https://github.com/lukasschwab/arxiv.py> |
+| **pypdf** | ≥ 4.0.0 | BSD-3-Clause | <https://github.com/py-pdf/pypdf> |
+| **Tavily Python** | ≥ 0.3.0 | MIT | <https://github.com/tavily-ai/tavily-python> |
 
 ### 知识库内容来源声明
 
@@ -760,7 +762,7 @@ A: 可以，修改 `src/embodiedmind/chains/retrieval_qa.py` 中的 `ChatOpenAI`
 
 #### 1. Lumina Embodied-AI-Guide
 
-- **仓库**：https://github.com/TianxingChen/Embodied-AI-Guide
+- **仓库**：<https://github.com/TianxingChen/Embodied-AI-Guide>
 - **作者**：TianxingChen 及贡献者
 - **访问方式**：GitHub REST API / `git clone`（非网页爬取）
 - **内容性质**：具身 AI 领域综合学习指南，汇集论文、框架、数据集等资源
@@ -769,8 +771,8 @@ A: 可以，修改 `src/embodiedmind/chains/retrieval_qa.py` 中的 `ChatOpenAI`
 
 #### 2. HuggingFace LeRobot 文档
 
-- **文档地址**：https://huggingface.co/docs/lerobot
-- **项目仓库**：https://github.com/huggingface/lerobot
+- **文档地址**：<https://huggingface.co/docs/lerobot>
+- **项目仓库**：<https://github.com/huggingface/lerobot>
 - **版权方**：HuggingFace Inc. 及社区贡献者
 - **许可证**：Apache License 2.0
 - **访问方式**：遵守 huggingface.co/robots.txt 的限速 HTTP 爬取
@@ -778,7 +780,7 @@ A: 可以，修改 `src/embodiedmind/chains/retrieval_qa.py` 中的 `ChatOpenAI`
 
 #### 3. Xbotics 具身智能社区
 
-- **网站**：https://xbotics-embodied.site
+- **网站**：<https://xbotics-embodied.site>
 - **版权方**：Xbotics 社区及内容贡献者
 - **访问方式**：遵守 xbotics-embodied.site/robots.txt，限速 ≥ 1 秒/请求
 - **使用范围**：非商业学习与研究
@@ -788,10 +790,10 @@ A: 可以，修改 `src/embodiedmind/chains/retrieval_qa.py` 中的 `ChatOpenAI`
 
 | 服务 | 提供方 | 用途 | 服务条款 |
 |------|--------|------|---------|
-| GPT-4o | OpenAI | 问答生成 | https://openai.com/policies/terms-of-use |
-| text-embedding-3-large | OpenAI | 文本向量化 | https://openai.com/policies/terms-of-use |
-| Tavily Search API | Tavily AI | 联网搜索（可选） | https://tavily.com/terms |
-| arXiv API | arXiv / Cornell University | 论文搜索（可选） | https://arxiv.org/help/api/tou |
+| GPT-4o | OpenAI | 问答生成 | <https://openai.com/policies/terms-of-use> |
+| text-embedding-3-large | OpenAI | 文本向量化 | <https://openai.com/policies/terms-of-use> |
+| Tavily Search API | Tavily AI | 联网搜索（可选） | <https://tavily.com/terms> |
+| arXiv API | arXiv / Cornell University | 论文搜索（可选） | <https://arxiv.org/help/api/tou> |
 
 ### 引用本项目
 
