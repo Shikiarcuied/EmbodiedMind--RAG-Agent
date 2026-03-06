@@ -2,7 +2,7 @@
 
 > **具身智能垂直领域 RAG 知识问答 Agent**
 >
-> 基于 LangChain 构建，整合 Lumina Embodied-AI-Guide、HuggingFace LeRobot 文档和 Xbotics 社区三大知识库，支持中英文自然语言问答，每条回答强制附带原始来源链接。
+> 基于 LangChain 构建，整合 Lumina Embodied-AI-Guide、HuggingFace LeRobot 文档和 Xbotics-Embodied-Guide三大知识库，支持中英文自然语言问答，每条回答强制附带原始来源链接。
 
 ---
 
@@ -416,7 +416,7 @@ poetry run python -m embodiedmind.ui.gradio_app
 │  □ 启用 ReAct Agent（更强，但更慢）                   │
 │  [清空对话]                                          │
 ├─────────────────────────────────────────────────────┤
-│  免责声明：内容来自公开资料，仅供非商业学习使用。        │
+│  免责声明：内容来自公开资料，仅供非商业学习使用。       │
 └─────────────────────────────────────────────────────┘
 ```
 
@@ -803,7 +803,7 @@ A: 可以，修改 `src/embodiedmind/chains/retrieval_qa.py` 中的 `ChatOpenAI`
 ```bibtex
 @software{embodiedmind2025,
   title  = {EmbodiedMind: A LangChain-Powered Embodied AI Knowledge Agent},
-  year   = {2025},
+  year   = {2026},
   url    = {https://github.com/your-username/embodiedmind},
   note   = {Non-commercial research use only}
 }
