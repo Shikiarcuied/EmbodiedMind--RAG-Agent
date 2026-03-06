@@ -101,8 +101,8 @@ EmbodiedMind 是一个面向**具身智能（Embodied AI）**领域的垂直 RAG
           ┌───────────────────┼────────────────────┐
           │                   │                    │
           ▼                   ▼                    ▼
-   GitHub API/clone    HuggingFace Docs      Xbotics 社区
-   Lumina Guide        (遵守 robots.txt)    (遵守 robots.txt)
+   GitHub API/clone    HuggingFace Docs      Xbotics GitHub
+   Lumina Guide        (遵守 robots.txt)    GitHub API/clone
 ```
 
 ---
@@ -594,7 +594,7 @@ KnowledgeSource(
 |------|---------|------|------|
 | **GitHub（Lumina 仓库）** | GitHub REST API（认证 Token）或 `git clone` | ≤ 4500 req/hr | GitHub ToS §H；robots.txt 禁止爬取 `/*/tree/` |
 | **HuggingFace 文档** | 遵守 robots.txt 的 HTTP 爬取 | ≥ 1 秒/请求 | HuggingFace Content Policy |
-| **Xbotics 社区** | 遵守 robots.txt 的 HTTP 爬取 | ≥ 1 秒/请求 | Robots Exclusion Protocol |
+| **Xbotics 社区** | GitHub REST API / `git clone` | ≤ 4500 req/hr | GitHub ToS |
 
 ### 合规机制
 
@@ -780,11 +780,11 @@ A: 可以，修改 `src/embodiedmind/chains/retrieval_qa.py` 中的 `ChatOpenAI`
 
 #### 3. Xbotics 具身智能社区
 
-- **网站**：<https://xbotics-embodied.site>
+- **仓库**：<https://github.com/Xbotics-Embodied-AI-club/Xbotics-Embodied-Guide>
 - **版权方**：Xbotics 社区及内容贡献者
-- **访问方式**：遵守 xbotics-embodied.site/robots.txt，限速 ≥ 1 秒/请求
+- **访问方式**：GitHub REST API / `git clone`（非网页爬取）
 - **使用范围**：非商业学习与研究
-- **注意**：如网站运营方要求停止抓取，将立即删除相关内容
+- **注意**：仓库许可证以实际 LICENSE 文件为准，使用前请自行核查
 
 ### AI 模型与服务声明
 
