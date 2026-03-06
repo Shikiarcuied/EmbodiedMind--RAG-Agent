@@ -387,8 +387,6 @@ poetry run python scripts/ingest_github.py
 poetry run python -m embodiedmind.ui.gradio_app
 ```
 
-浏览器访问：**<http://localhost:7860>**
-
 ---
 
 ## 使用教程
@@ -801,10 +799,10 @@ A: 可以，修改 `src/embodiedmind/chains/retrieval_qa.py` 中的 `ChatOpenAI`
 如果你在学术研究或项目中使用了 EmbodiedMind，欢迎引用：
 
 ```bibtex
-@software{embodiedmind2025,
+@software{embodiedmind2026,
   title  = {EmbodiedMind: A LangChain-Powered Embodied AI Knowledge Agent},
   year   = {2026},
-  url    = {https://github.com/your-username/embodiedmind},
+  url    = {https://github.com/Shikiarcuied/EmbodiedMind-RAG-Agent},
   note   = {Non-commercial research use only}
 }
 ```
